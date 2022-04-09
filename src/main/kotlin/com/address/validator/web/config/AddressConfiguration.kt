@@ -15,7 +15,9 @@ class AddressConfiguration(
     fun addressRouter(): RouterFunction<ServerResponse> {
         return router {
             BASE_URI.nest {
-                PUT("/").invoke { addressHandler.createAddress(it) }
+                PUT("/").invoke {
+                    addressHandler.createAddress(it)
+                }
             }
         }
     }

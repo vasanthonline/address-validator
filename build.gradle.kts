@@ -39,7 +39,6 @@ dependencies {
 	implementation("net.logstash.logback:logstash-logback-encoder:6.3")
 	implementation("org.owasp:security-logging-logback:1.1.6")
 
-	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -48,7 +47,6 @@ dependencies {
 
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-	implementation("org.springframework.security:spring-security-jwt:1.0.10.RELEASE")
 	implementation("com.google.apis:google-api-services-cloudresourcemanager:v1-rev563-1.25.0")
 
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
