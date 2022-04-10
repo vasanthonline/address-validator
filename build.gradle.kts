@@ -40,6 +40,8 @@ dependencies {
 	implementation("org.owasp:security-logging-logback:1.1.6")
 
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.security:spring-security-jwt:1.0.10.RELEASE")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.cloud:spring-cloud-starter-kubernetes-config")
