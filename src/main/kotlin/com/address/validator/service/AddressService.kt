@@ -1,9 +1,10 @@
 package com.address.validator.service
 
-import com.address.validator.document.AddressDocument
+import com.address.validator.firestore.document.AddressDocument
 import com.address.validator.models.Address
-import com.address.validator.repository.AddressRepository
+import com.address.validator.firestore.repository.AddressRepository
 import org.springframework.stereotype.Component
+import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @Component
@@ -19,5 +20,9 @@ class AddressService(
             postalCode = address.postalCode,
             country = address.country
         ))
+    }
+
+    fun getAddresses(): Flux<AddressDocument> {
+        return addressRepository.findAll()
     }
 }

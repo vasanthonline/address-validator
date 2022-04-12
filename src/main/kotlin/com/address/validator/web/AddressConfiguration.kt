@@ -18,9 +18,7 @@ class AddressConfiguration(
     fun addressRouter(): RouterFunction<ServerResponse> {
         return router {
             GET("/address") {
-                val address = Address("", "", "", "", "", "", "")
-                ServerResponse.ok()
-                    .contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(address))
+                addressHandler.getAllAddresses()
             }
             PUT("/address") {
                 addressHandler.createAddress(it)

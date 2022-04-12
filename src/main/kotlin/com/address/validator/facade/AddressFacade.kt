@@ -4,6 +4,7 @@ import com.address.validator.models.Address
 import com.address.validator.service.AddressService
 import org.springframework.stereotype.Component
 import org.springframework.stereotype.Service
+import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @Component
@@ -21,6 +22,20 @@ class AddressFacade(
                 country = address.country
         ))
         return addressDocument.map {
+            Address(
+                unit = it.unit,
+                street = it.street,
+                city = it.city,
+                province = it.province,
+                postalCode = it.postalCode,
+                country = it.country
+            )
+        }
+    }
+
+    fun getAddresses(): Flux<Address> {
+        val addressDocuments = addressService.getAddresses()
+        return addressDocuments.map {
             Address(
                 unit = it.unit,
                 street = it.street,

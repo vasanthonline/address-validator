@@ -1,4 +1,4 @@
-package com.address.validator.document
+package com.address.validator.firestore.document
 
 import com.google.cloud.firestore.annotation.DocumentId
 import org.springframework.cloud.gcp.data.firestore.Document
