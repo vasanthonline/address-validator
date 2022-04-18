@@ -31,8 +31,8 @@ class PrefixedFirestorePersistenceEntity<T>(information: TypeInformation<T>,
         val userName = System.getProperty("user.name") ?: ""
         return when {
             collectionPrefix.equals("local", ignoreCase = true) ->
-                collectionPrefix.toUpperCase() + "_" + userName.toUpperCase() + "_" + super.collectionName()
-            else -> collectionPrefix.toUpperCase() + "_" + super.collectionName()
+                collectionPrefix + "_" + userName.toUpperCase() + "_" + super.collectionName()
+            else -> collectionPrefix + "_" + super.collectionName()
         }
     }
 }
